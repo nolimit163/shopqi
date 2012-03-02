@@ -1,0 +1,35 @@
+# -*- encoding: utf-8 -*-
+
+Gem::Specification.new do |s|
+  s.name = %q{shopqi_api}
+  s.version = "2.3.0"
+  s.author = "123"
+
+  s.summary = %q{The Shopify API gem is a lightweight gem for accessing the Shopify admin REST web services}
+  s.description = %q{The Shopify API gem allows Ruby developers to programmatically access the admin section of Shopify stores. The API is implemented as JSON or XML over HTTP using all four verbs (GET/POST/PUT/DELETE). Each resource, like Order, Product, or Collection, has its own URL and is manipulated in isolation.}
+  s.email = %q{developers@jadedpixel.com}
+  s.homepage = %q{http://www.shopify.com/partners/apps}
+
+  s.extra_rdoc_files = [
+    "LICENSE",
+    "README.rdoc"
+  ]
+  s.files         = `git ls-files`.split("\n")
+  s.test_files    = `git ls-files -- {test}/*`.split("\n")
+  s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
+
+  s.rdoc_options = ["--charset=UTF-8"]
+  s.summary = %q{ShopifyAPI is a lightweight gem for accessing the Shopify admin REST web services}
+  s.license = 'MIT'
+
+  s.add_dependency("activeresource", [">= 3.0.0"])
+  s.add_dependency("thor", [">= 0.14.4"])
+  
+  if s.respond_to?(:add_development_dependency)
+    s.add_development_dependency("mocha", ">= 0.9.8")
+    s.add_development_dependency("fakeweb")
+  else
+    s.add_dependency("mocha", ">= 0.9.8")
+    s.add_dependency("fakeweb")
+  end
+end
